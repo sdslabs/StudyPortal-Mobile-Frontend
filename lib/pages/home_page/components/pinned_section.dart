@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:studyportal/pages/home_page/components/more_info_button.dart';
+import 'package:studyportal/pages/see_all_pinned_page/see_all_pinned_page.dart';
 
 class PinnedSection extends StatelessWidget {
   const PinnedSection({
@@ -70,7 +71,8 @@ class PinnedSection extends StatelessWidget {
               Container(
                 child: MoreInfoButton(
                   onTap: () {
-                    print("See all triggered by pinned section");
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const SeeAllPinnedPage()));
                   },
                   icon: SvgPicture.asset(
                       height: 11, width: 6, "lib/assets/svgs/right_caret.svg"),

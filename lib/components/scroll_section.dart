@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ExploreMainSection extends StatelessWidget {
-  const ExploreMainSection({
+class ScrollSection extends StatelessWidget {
+  const ScrollSection({
     super.key,
     required this.size,
     required this.CourseCards,

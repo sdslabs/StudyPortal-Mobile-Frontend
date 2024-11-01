@@ -33,7 +33,9 @@ class _StudyPortalState extends State<StudyPortal> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          textTheme: const TextTheme(titleLarge: TextStyle()),
+          textTheme: ThemeData.light().textTheme.apply(
+              bodyColor: const Color.fromRGBO(38, 48, 83, 1.0),
+              displayColor: const Color.fromRGBO(38, 48, 83, 1.0)),
           fontFamily: "Poppins",
           colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF263054)),
           scaffoldBackgroundColor: const Color(0xFFF0F1F5)),

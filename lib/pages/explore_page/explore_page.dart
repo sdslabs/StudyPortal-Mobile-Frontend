@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:studyportal/components/course_card.dart';
 import 'package:studyportal/tools/pin_enum.dart';
-import 'package:studyportal/pages/explore_page/components/explore_main_section.dart';
+import 'package:studyportal/components/scroll_section.dart';
 
 class ExplorePage extends StatefulWidget {
   const ExplorePage({super.key});
@@ -169,7 +169,6 @@ class _ExplorePageState extends State<ExplorePage>
                     color: Colors.white,
                   ),
                   indicatorSize: TabBarIndicatorSize.tab,
-                  labelColor: Colors.black,
                   labelStyle: const TextStyle(
                       fontSize: 17, fontWeight: FontWeight.w500),
                   onTap: (index) {
@@ -195,13 +194,12 @@ class _ExplorePageState extends State<ExplorePage>
                 Visibility(
                   maintainState: true,
                   visible: _selectedIndex == 0,
-                  child:
-                      ExploreMainSection(size: size, CourseCards: CourseCards),
+                  child: ScrollSection(size: size, CourseCards: CourseCards),
                 ),
                 Visibility(
                   maintainState: true,
                   visible: _selectedIndex == 1,
-                  child: ExploreMainSection(
+                  child: ScrollSection(
                       size: size,
                       CourseCards: [CourseCards[1], CourseCards[2]]),
                 ),
