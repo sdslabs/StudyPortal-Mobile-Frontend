@@ -27,7 +27,8 @@ class PinnedSection extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 "lib/assets/svgs/pin_inactive.svg",
-                colorFilter: ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                colorFilter:
+                    const ColorFilter.mode(Colors.black, BlendMode.srcIn),
                 height: 16,
                 width: 16,
               ),
@@ -43,29 +44,29 @@ class PinnedSection extends StatelessWidget {
           const SizedBox(
             height: 12,
           ),
-          Container(
+          SizedBox(
             height: 160,
             width: size.width,
             child: ListView.separated(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
               itemCount: CourseCards.length,
               itemBuilder: (BuildContext context, int index) {
                 return CourseCards[index];
               },
               separatorBuilder: (context, index) {
-                return SizedBox(
+                return const SizedBox(
                   width: 16,
                 );
               },
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Row(
             children: [
-              Spacer(),
+              const Spacer(),
               Container(
                 child: MoreInfoButton(
                   onTap: () {

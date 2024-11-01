@@ -20,7 +20,7 @@ class MoreInfoButton extends StatelessWidget {
           const SizedBox(
             width: 2,
           ),
-          Container(
+          SizedBox(
             height: 16,
             width: 16,
             child: icon,

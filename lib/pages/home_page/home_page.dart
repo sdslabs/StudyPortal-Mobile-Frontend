@@ -79,49 +79,46 @@ class HomePage extends StatelessWidget {
       )
     ];
     return Scaffold(
-      body: SafeArea(
-          child: Padding(
+        body: SafeArea(
+      child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12.0),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Container(
-            // height: size.height,
-            child: Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(bottom: 23),
-                  // color: Colors.amber,
-                  width: size.width,
-                  height: 50,
-                  child: const Row(
-                    children: [
-                      Text(
-                        "Home",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 24),
-                      ),
-                      Spacer()
-                    ],
-                  ),
+          child: Column(
+            children: [
+              Container(
+                margin: const EdgeInsets.only(bottom: 23),
+                // color: Colors.amber,
+                width: size.width,
+                height: 50,
+                child: const Row(
+                  children: [
+                    Text(
+                      "Home",
+                      style:
+                          TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
+                    ),
+                    Spacer()
+                  ],
                 ),
-                PinnedSection(
-                    size: size,
-                    CourseCards:
-                        CourseCards), //Pinned cards section, goto definition for more info
-                SizedBox(
-                  height: 24,
-                ),
-                RecentSection(size: size, RecentTiles: RecentTiles),
-                SizedBox(
-                  height: 24,
-                ),
-                BookmarkedSection(size: size, bookmarkedTiles: BookmarkedTiles),
-                //This is the recents section, goto definition for more info
-              ],
-            ),
+              ),
+              PinnedSection(
+                  size: size,
+                  CourseCards:
+                      CourseCards), //Pinned cards section, goto definition for more info
+              const SizedBox(
+                height: 24,
+              ),
+              RecentSection(size: size, RecentTiles: RecentTiles),
+              const SizedBox(
+                height: 24,
+              ),
+              BookmarkedSection(size: size, bookmarkedTiles: BookmarkedTiles),
+              //This is the recents section, goto definition for more info
+            ],
           ),
         ),
-      )),
-    );
+      ),
+    ));
   }
 }

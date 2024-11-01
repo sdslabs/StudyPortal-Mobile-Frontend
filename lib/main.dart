@@ -36,7 +36,7 @@ class _StudyPortalState extends State<StudyPortal> {
           textTheme: const TextTheme(titleLarge: TextStyle()),
           fontFamily: "Poppins",
           colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF263054)),
-          scaffoldBackgroundColor: Color(0xFFF0F1F5)),
+          scaffoldBackgroundColor: const Color(0xFFF0F1F5)),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: _pages[_currentIndex],
