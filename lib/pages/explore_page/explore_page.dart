@@ -1,15 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:studyportal/components/course_card.dart';
 import 'package:studyportal/tools/pin_enum.dart';
-// import 'package:studyportal/pages/explore_page/components/horizontal_tabs.dart';
 import 'package:studyportal/pages/explore_page/components/explore_main_section.dart';
 
-class ExplorePage extends StatelessWidget {
+class ExplorePage extends StatefulWidget {
   const ExplorePage({super.key});
+
+  @override
+  State<ExplorePage> createState() => _ExplorePageState();
+}
+
+class _ExplorePageState extends State<ExplorePage>
+    with TickerProviderStateMixin {
+  late TabController _tabController;
+  int _selectedIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(initialIndex: 0, length: 2, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     const List<Widget> CourseCards = [
       // CourseCard(
       //   title: "Architecture",
@@ -108,11 +129,13 @@ class ExplorePage extends StatelessWidget {
         pin: Pin.none,
       ),
     ];
+
     return Scaffold(
         body: SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12.0),
         child: ListView(
+          shrinkWrap: true,
           scrollDirection: Axis.vertical,
           children: [
             Container(
@@ -129,7 +152,61 @@ class ExplorePage extends StatelessWidget {
                 ],
               ),
             ),
-            ExploreMainSection(size: size, CourseCards: CourseCards),
+            Container(
+              height: 40,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(6),
+                color: const Color(0xFFC8CBDC),
+              ),
+              child: TabBar(
+                  controller: _tabController,
+                  indicator: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      color: const Color(0xFFC8CBDC),
+                      width: 5,
+                    ),
+                    color: Colors.white,
+                  ),
+                  indicatorSize: TabBarIndicatorSize.tab,
+                  labelColor: Colors.black,
+                  labelStyle: const TextStyle(
+                      fontSize: 17, fontWeight: FontWeight.w500),
+                  onTap: (index) {
+                    setState(() {
+                      _selectedIndex = index;
+                    });
+                    _tabController.animateTo(index,
+                        duration: const Duration(milliseconds: 500));
+                  },
+                  tabs: const [
+                    Tab(
+                      text: "Academics",
+                    ),
+                    Tab(
+                      text: "More",
+                    ),
+                  ]),
+            ),
+            const SizedBox(height: 20),
+            IndexedStack(
+              index: _selectedIndex,
+              children: [
+                Visibility(
+                  maintainState: true,
+                  visible: _selectedIndex == 0,
+                  child:
+                      ExploreMainSection(size: size, CourseCards: CourseCards),
+                ),
+                Visibility(
+                  maintainState: true,
+                  visible: _selectedIndex == 1,
+                  child: ExploreMainSection(
+                      size: size,
+                      CourseCards: [CourseCards[1], CourseCards[2]]),
+                ),
+              ],
+            )
           ],
         ),
       ),
