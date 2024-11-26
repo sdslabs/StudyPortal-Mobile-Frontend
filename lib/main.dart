@@ -44,6 +44,7 @@ class _StudyPortalState extends State<StudyPortal> {
         body: _pages[_currentIndex],
         bottomNavigationBar:
             SPBottomNavBar(currentIndex: _currentIndex, onTap: _onTap),
+        //Edit BottomNavBar to show on page routes through Navigator.push
       ),
     );
   }

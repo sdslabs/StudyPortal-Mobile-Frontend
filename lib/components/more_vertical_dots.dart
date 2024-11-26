@@ -15,6 +15,7 @@ class MoreVerticalDots extends StatelessWidget {
       colorFilter: ColorFilter.mode(color ?? Colors.black, BlendMode.srcIn),
       height: height ?? 16,
       width: width ?? 16,
+      //Add onTap to show drop down menu
     );
   }
 }

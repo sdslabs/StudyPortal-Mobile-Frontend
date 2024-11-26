@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:studyportal/components/course_card.dart';
 import 'package:studyportal/components/file_tile.dart';
 import 'package:studyportal/pages/home_page/components/bookmarked_section.dart';
+import 'package:studyportal/pages/home_page/components/downloaded_section.dart';
 import 'package:studyportal/pages/home_page/components/pinned_section.dart';
 import 'package:studyportal/pages/home_page/components/recent_section.dart';
 import 'package:studyportal/tools/file_type_enum.dart';
-
 import 'package:studyportal/tools/pin_enum.dart';
 
 class HomePage extends StatelessWidget {
@@ -78,6 +78,26 @@ class HomePage extends StatelessWidget {
         title: "This is a file tile",
       )
     ];
+
+    const List<Widget> DownloadedTiles = [
+      FileTile(
+        fileType: FileType.link,
+        title: "ETEs Final Notes - Fluid Dynamics",
+      ),
+      FileTile(
+        fileType: FileType.book,
+        title: "This is a file tile",
+      ),
+      FileTile(
+        fileType: FileType.notes,
+        title: "This is a file tile",
+      ),
+      FileTile(
+        fileType: FileType.pyqs,
+        title: "This is a file tile",
+      )
+    ];
+
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -115,6 +135,10 @@ class HomePage extends StatelessWidget {
               ),
               BookmarkedSection(size: size, bookmarkedTiles: BookmarkedTiles),
               //This is the recents section, goto definition for more info
+              const SizedBox(
+                height: 24,
+              ),
+              DownloadedSection(size: size, downloadedTiles: DownloadedTiles),
             ],
           ),
         ),

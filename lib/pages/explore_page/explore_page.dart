@@ -136,7 +136,6 @@ class _ExplorePageState extends State<ExplorePage>
         padding: const EdgeInsets.symmetric(horizontal: 12.0),
         child: ListView(
           shrinkWrap: true,
-          scrollDirection: Axis.vertical,
           children: [
             Container(
               margin: const EdgeInsets.only(bottom: 23),
@@ -168,9 +167,12 @@ class _ExplorePageState extends State<ExplorePage>
                     ),
                     color: Colors.white,
                   ),
+                  dividerColor: Colors.transparent,
                   indicatorSize: TabBarIndicatorSize.tab,
                   labelStyle: const TextStyle(
-                      fontSize: 17, fontWeight: FontWeight.w500),
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      color: Color.fromRGBO(38, 48, 83, 1.0)),
                   onTap: (index) {
                     setState(() {
                       _selectedIndex = index;
@@ -194,13 +196,13 @@ class _ExplorePageState extends State<ExplorePage>
                 Visibility(
                   maintainState: true,
                   visible: _selectedIndex == 0,
-                  child: ScrollSection(size: size, CourseCards: CourseCards),
+                  child: const ScrollSection(rows: 3.5, CourseCards: CourseCards),
                 ),
                 Visibility(
                   maintainState: true,
                   visible: _selectedIndex == 1,
                   child: ScrollSection(
-                      size: size,
+                      rows: 3.5,
                       CourseCards: [CourseCards[1], CourseCards[2]]),
                 ),
               ],
