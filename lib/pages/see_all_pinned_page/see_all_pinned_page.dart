@@ -118,7 +118,7 @@ class SeeAllPinnedPage extends StatelessWidget {
                 scrollDirection: Axis.vertical,
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(bottom: 23),
+                    margin: const EdgeInsets.only(bottom: 20, top: 20),
                     width: size.width,
                     height: 50,
                     child: const Row(

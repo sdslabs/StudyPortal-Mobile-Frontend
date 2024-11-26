@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:studyportal/pages/home_page/components/more_info_button.dart';
+import 'package:studyportal/pages/see_all_recent_page/see_all_recent_page.dart';
 
 class RecentSection extends StatelessWidget {
   const RecentSection({
@@ -72,7 +73,8 @@ class RecentSection extends StatelessWidget {
               const Spacer(),
               MoreInfoButton(
                   onTap: () {
-                    print("See all triggered by recent section");
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const SeeAllRecentPage()));
                   },
                   info: "See all",
                   icon: SvgPicture.asset(

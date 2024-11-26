@@ -68,8 +68,7 @@ class PinnedSection extends StatelessWidget {
           Row(
             children: [
               const Spacer(),
-              Container(
-                child: MoreInfoButton(
+              MoreInfoButton(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => const SeeAllPinnedPage()));
@@ -78,7 +77,6 @@ class PinnedSection extends StatelessWidget {
                       height: 11, width: 6, "lib/assets/svgs/right_caret.svg"),
                   info: "See all",
                 ),
-              ),
             ],
           )
         ],

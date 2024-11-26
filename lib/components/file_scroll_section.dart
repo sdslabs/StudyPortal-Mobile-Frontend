@@ -14,6 +14,7 @@ class FileScrollSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(12),
+      margin: const EdgeInsets.only(bottom: 20),
       width: size.width,
       decoration: BoxDecoration(
         color: Colors.white,

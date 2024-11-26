@@ -138,7 +138,7 @@ class _ExplorePageState extends State<ExplorePage>
           shrinkWrap: true,
           children: [
             Container(
-              margin: const EdgeInsets.only(bottom: 23),
+              margin: const EdgeInsets.only(bottom: 20, top: 20),
               width: size.width,
               height: 50,
               child: const Row(

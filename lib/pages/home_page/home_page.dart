@@ -107,8 +107,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                margin: const EdgeInsets.only(bottom: 23),
-                // color: Colors.amber,
+                margin: const EdgeInsets.only(bottom: 20, top: 20),
                 width: size.width,
                 height: 50,
                 child: const Row(
@@ -125,7 +124,7 @@ class HomePage extends StatelessWidget {
               PinnedSection(
                   size: size,
                   CourseCards:
-                      CourseCards), //Pinned cards section, goto definition for more info
+                      CourseCards),
               const SizedBox(
                 height: 24,
               ),
@@ -134,11 +133,13 @@ class HomePage extends StatelessWidget {
                 height: 24,
               ),
               BookmarkedSection(size: size, bookmarkedTiles: BookmarkedTiles),
-              //This is the recents section, goto definition for more info
               const SizedBox(
                 height: 24,
               ),
               DownloadedSection(size: size, downloadedTiles: DownloadedTiles),
+              const SizedBox(
+                height: 12,
+              ),
             ],
           ),
         ),

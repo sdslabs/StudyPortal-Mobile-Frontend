@@ -43,6 +43,46 @@ class SeeAllBookmarkedPage extends StatelessWidget {
         fileType: FileType.pyqs,
         title: "This is a file tile",
       ),
+            FileTile(
+        fileType: FileType.pyqs,
+        title: "This is a file tile",
+      ),
+      FileTile(
+        fileType: FileType.link,
+        title: "ETEs Final Notes - Fluid Dynamics",
+      ),
+      FileTile(
+        fileType: FileType.book,
+        title: "This is a file tile",
+      ),
+      FileTile(
+        fileType: FileType.notes,
+        title: "This is a file tile",
+      ),
+      FileTile(
+        fileType: FileType.pyqs,
+        title: "This is a file tile",
+      ),
+            FileTile(
+        fileType: FileType.pyqs,
+        title: "This is a file tile",
+      ),
+      FileTile(
+        fileType: FileType.link,
+        title: "ETEs Final Notes - Fluid Dynamics",
+      ),
+      FileTile(
+        fileType: FileType.book,
+        title: "This is a file tile",
+      ),
+      FileTile(
+        fileType: FileType.notes,
+        title: "This is a file tile",
+      ),
+      FileTile(
+        fileType: FileType.pyqs,
+        title: "This is a file tile",
+      ),
     ];
 
     return Scaffold(
@@ -54,7 +94,7 @@ class SeeAllBookmarkedPage extends StatelessWidget {
                 scrollDirection: Axis.vertical,
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(bottom: 23),
+                    margin: const EdgeInsets.only(bottom: 20, top: 20),
                     width: size.width,
                     height: 50,
                     child: const Row(
