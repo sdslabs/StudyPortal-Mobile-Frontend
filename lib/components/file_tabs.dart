@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:studyportal/components/file_scroll_section.dart';
+import 'package:studyportal/components/file_tile.dart';
+import 'package:studyportal/tools/file_type_enum.dart';
 
 class FileTabs extends StatefulWidget {
   const FileTabs({
@@ -9,7 +11,7 @@ class FileTabs extends StatefulWidget {
   });
 
   final Size size;
-  final List<Widget> FileTiles;
+  final List<FileTile> FileTiles;
 
   @override
   State<FileTabs> createState() => _FilterTabBarState();
@@ -30,7 +32,7 @@ class _FilterTabBarState extends State<FileTabs> with TickerProviderStateMixin {
     _tabController.dispose();
     super.dispose();
   }
-// Implement filter and search
+// Implement search
   @override
   Widget build(BuildContext context) {
       return Column(
@@ -154,31 +156,31 @@ class _FilterTabBarState extends State<FileTabs> with TickerProviderStateMixin {
                 maintainState: true,
                 visible: _selectedIndex == 1,
                 child: FileScrollSection(
-                    size: widget.size, FileTiles: widget.FileTiles.sublist(1)),
+                    size: widget.size, FileTiles: widget.FileTiles.where((fileTile) => fileTile.fileType == FileType.notes).toList()),
               ),
               Visibility(
                 maintainState: true,
                 visible: _selectedIndex == 2,
                 child: FileScrollSection(
-                    size: widget.size, FileTiles: widget.FileTiles.sublist(2)),
+                    size: widget.size, FileTiles: widget.FileTiles.where((fileTile) => fileTile.fileType == FileType.tut).toList()),
               ),
               Visibility(
                 maintainState: true,
                 visible: _selectedIndex == 3,
                 child: FileScrollSection(
-                    size: widget.size, FileTiles: widget.FileTiles.sublist(3)),
+                    size: widget.size, FileTiles: widget.FileTiles.where((fileTile) => fileTile.fileType == FileType.pyqs).toList()),
               ),
               Visibility(
                 maintainState: true,
                 visible: _selectedIndex == 4,
                 child: FileScrollSection(
-                    size: widget.size, FileTiles: widget.FileTiles.sublist(4)),
+                    size: widget.size, FileTiles: widget.FileTiles.where((fileTile) => fileTile.fileType == FileType.book).toList()),
               ),
               Visibility(
                 maintainState: true,
                 visible: _selectedIndex == 5,
                 child: FileScrollSection(
-                    size: widget.size, FileTiles: widget.FileTiles.sublist(5)),
+                    size: widget.size, FileTiles: widget.FileTiles.where((fileTile) => fileTile.fileType == FileType.link).toList()),
               ),
             ],
           )

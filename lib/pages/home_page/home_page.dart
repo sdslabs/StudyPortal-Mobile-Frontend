@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    const List<Widget> CourseCards = [
+    const List<CourseCard> CourseCards = [
       CourseCard(
         title: "Architecture",
         subtitle: "Introduction to the electrical world",
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
       ),
     ];
 
-    const List<Widget> RecentTiles = [
+    const List<FileTile> RecentTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
       )
     ];
 
-    const List<Widget> BookmarkedTiles = [
+    const List<FileTile> BookmarkedTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",
@@ -79,7 +79,7 @@ class HomePage extends StatelessWidget {
       )
     ];
 
-    const List<Widget> DownloadedTiles = [
+    const List<FileTile> DownloadedTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",

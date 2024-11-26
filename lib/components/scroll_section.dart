@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_grid/responsive_grid.dart';
+import 'package:studyportal/components/course_card.dart';
 
 class ScrollSection extends StatelessWidget {
   const ScrollSection({
@@ -9,7 +10,7 @@ class ScrollSection extends StatelessWidget {
   });
 
   final double rows;
-  final List<Widget> CourseCards;
+  final List<CourseCard> CourseCards;
 
   @override
   Widget build(BuildContext context) {

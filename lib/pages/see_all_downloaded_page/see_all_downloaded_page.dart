@@ -10,7 +10,7 @@ class SeeAllDownloadedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
-    const List<Widget> FileTiles = [
+    const List<FileTile> FileTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",
@@ -81,6 +81,10 @@ class SeeAllDownloadedPage extends StatelessWidget {
       ),
       FileTile(
         fileType: FileType.pyqs,
+        title: "This is a file tile",
+      ),
+      FileTile(
+        fileType: FileType.tut,
         title: "This is a file tile",
       ),
     ];

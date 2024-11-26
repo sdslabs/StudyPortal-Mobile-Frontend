@@ -31,7 +31,7 @@ class _ExplorePageState extends State<ExplorePage>
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
-    const List<Widget> CourseCards = [
+    const List<CourseCard> CourseCards = [
       // CourseCard(
       //   title: "Architecture",
       //   subtitle: "Introduction to the electrical world",

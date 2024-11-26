@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:studyportal/components/course_card.dart';
 import 'package:studyportal/pages/home_page/components/more_info_button.dart';
 import 'package:studyportal/pages/see_all_pinned_page/see_all_pinned_page.dart';
 
@@ -11,7 +12,7 @@ class PinnedSection extends StatelessWidget {
   });
 
   final Size size;
-  final List<Widget> CourseCards;
+  final List<CourseCard> CourseCards;
 
   @override
   Widget build(BuildContext context) {

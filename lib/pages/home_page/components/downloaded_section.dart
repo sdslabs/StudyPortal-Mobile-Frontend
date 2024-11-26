@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:studyportal/components/file_tile.dart';
 import 'package:studyportal/pages/home_page/components/more_info_button.dart';
 import 'package:studyportal/pages/see_all_downloaded_page/see_all_downloaded_page.dart';
 
@@ -11,7 +12,7 @@ class DownloadedSection extends StatelessWidget {
   });
 
   final Size size;
-  final List<Widget> downloadedTiles;
+  final List<FileTile> downloadedTiles;
 
   @override
   Widget build(BuildContext context) {
