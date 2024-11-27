@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:studyportal/components/file_tile.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:studyportal/components/not_found_box.dart';
 
 class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar(
@@ -89,7 +90,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
             ),
           ),
         const SizedBox(height: 10),
-        if (widget.isFocused)
+        if (widget.isFocused && filteredList.isNotEmpty)
           Container(
             padding: const EdgeInsets.all(12),
             margin: const EdgeInsets.only(bottom: 20),
@@ -98,22 +99,22 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               border: Border.all(color: const Color(0xFFE3E2E8)),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: filteredList.isEmpty
-                ? const Center(child: Text('No items found'))
-                : Column(
+            child: Column(
+              children: [
+                for (int index = 0; index < filteredList.length; index++)
+                  Column(
                     children: [
-                      for (int index = 0; index < filteredList.length; index++)
-                        Column(
-                          children: [
-                            filteredList[index],
-                            const SizedBox(
-                              height: 13,
-                            ),
-                          ],
-                        )
+                      filteredList[index],
+                      const SizedBox(
+                        height: 13,
+                      ),
                     ],
-                  ),
-          )
+                  )
+              ],
+            ),
+          ),
+        if (widget.isFocused) const NotFoundBox(),
+        if (widget.isFocused) const SizedBox(height: 20),
       ],
     );
   }
