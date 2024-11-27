@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    const List<CourseCard> CourseCards = [
+    const List<CourseCard> courseCards = [
       CourseCard(
         title: "Architecture",
         subtitle: "Introduction to the electrical world",
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
       ),
     ];
 
-    const List<FileTile> RecentTiles = [
+    const List<FileTile> recentTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
       )
     ];
 
-    const List<FileTile> BookmarkedTiles = [
+    const List<FileTile> bookmarkedTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",
@@ -79,7 +79,7 @@ class HomePage extends StatelessWidget {
       )
     ];
 
-    const List<FileTile> DownloadedTiles = [
+    const List<FileTile> downloadedTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",
@@ -121,22 +121,19 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              PinnedSection(
-                  size: size,
-                  CourseCards:
-                      CourseCards),
+              PinnedSection(size: size, courseCards: courseCards),
               const SizedBox(
                 height: 24,
               ),
-              RecentSection(size: size, RecentTiles: RecentTiles),
+              RecentSection(size: size, recentTiles: recentTiles),
               const SizedBox(
                 height: 24,
               ),
-              BookmarkedSection(size: size, bookmarkedTiles: BookmarkedTiles),
+              BookmarkedSection(size: size, bookmarkedTiles: bookmarkedTiles),
               const SizedBox(
                 height: 24,
               ),
-              DownloadedSection(size: size, downloadedTiles: DownloadedTiles),
+              DownloadedSection(size: size, downloadedTiles: downloadedTiles),
               const SizedBox(
                 height: 12,
               ),

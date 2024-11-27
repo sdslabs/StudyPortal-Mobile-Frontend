@@ -4,11 +4,11 @@ class FileScrollSection extends StatelessWidget {
   const FileScrollSection({
     super.key,
     required this.size,
-    required this.FileTiles,
+    required this.fileTiles,
   });
 
   final Size size;
-  final List<Widget> FileTiles;
+  final List<Widget> fileTiles;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,10 @@ class FileScrollSection extends StatelessWidget {
       ),
       child: Column(
         children: [
-          for (int index = 0; index < FileTiles.length; index++)
+          for (int index = 0; index < fileTiles.length; index++)
             Column(
               children: [
-                FileTiles[index],
+                fileTiles[index],
                 const SizedBox(
                   height: 13,
                 ),

@@ -8,11 +8,11 @@ class RecentSection extends StatelessWidget {
   const RecentSection({
     super.key,
     required this.size,
-    required this.RecentTiles,
+    required this.recentTiles,
   });
 
   final Size size;
-  final List<FileTile> RecentTiles;
+  final List<FileTile> recentTiles;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class RecentSection extends StatelessWidget {
               scrollDirection: Axis.vertical,
               itemCount: 4,
               itemBuilder: (BuildContext context, int index) {
-                return RecentTiles[index];
+                return recentTiles[index];
               },
               separatorBuilder: (context, index) {
                 return const SizedBox(

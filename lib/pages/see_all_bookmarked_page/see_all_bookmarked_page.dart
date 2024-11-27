@@ -10,7 +10,7 @@ class SeeAllBookmarkedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
-    const List<FileTile> FileTiles = [
+    const List<FileTile> fileTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",
@@ -43,7 +43,7 @@ class SeeAllBookmarkedPage extends StatelessWidget {
         fileType: FileType.pyqs,
         title: "This is a file tile",
       ),
-            FileTile(
+      FileTile(
         fileType: FileType.pyqs,
         title: "This is a file tile",
       ),
@@ -63,7 +63,7 @@ class SeeAllBookmarkedPage extends StatelessWidget {
         fileType: FileType.pyqs,
         title: "This is a file tile",
       ),
-            FileTile(
+      FileTile(
         fileType: FileType.pyqs,
         title: "This is a file tile",
       ),
@@ -112,7 +112,11 @@ class SeeAllBookmarkedPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  FileTabs(size: size, FileTiles: FileTiles)
+                  FileTabs(
+                    size: size,
+                    fileTiles: fileTiles,
+                    screen: "Bookmarked",
+                  )
                 ])),
       ),
     );

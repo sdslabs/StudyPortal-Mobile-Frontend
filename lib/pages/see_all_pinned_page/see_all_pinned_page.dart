@@ -10,7 +10,7 @@ class SeeAllPinnedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
-    const List<CourseCard> CourseCards = [
+    const List<CourseCard> courseCards = [
       CourseCard(
         title: "Architecture",
         subtitle: "Introduction to the electrical world",
@@ -132,7 +132,7 @@ class SeeAllPinnedPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const ScrollSection(rows: 4, CourseCards: CourseCards)
+                  const ScrollSection(rows: 4, courseCards: courseCards)
                 ])),
       ),
     );

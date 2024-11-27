@@ -31,7 +31,7 @@ class _ExplorePageState extends State<ExplorePage>
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
-    const List<CourseCard> CourseCards = [
+    const List<CourseCard> courseCards = [
       // CourseCard(
       //   title: "Architecture",
       //   subtitle: "Introduction to the electrical world",
@@ -196,14 +196,14 @@ class _ExplorePageState extends State<ExplorePage>
                 Visibility(
                   maintainState: true,
                   visible: _selectedIndex == 0,
-                  child: const ScrollSection(rows: 3.5, CourseCards: CourseCards),
+                  child:
+                      const ScrollSection(rows: 3.5, courseCards: courseCards),
                 ),
                 Visibility(
                   maintainState: true,
                   visible: _selectedIndex == 1,
                   child: ScrollSection(
-                      rows: 3.5,
-                      CourseCards: [CourseCards[1], CourseCards[2]]),
+                      rows: 3.5, courseCards: [courseCards[1], courseCards[2]]),
                 ),
               ],
             )

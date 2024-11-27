@@ -8,11 +8,11 @@ class PinnedSection extends StatelessWidget {
   const PinnedSection({
     super.key,
     required this.size,
-    required this.CourseCards,
+    required this.courseCards,
   });
 
   final Size size;
-  final List<CourseCard> CourseCards;
+  final List<CourseCard> courseCards;
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +52,9 @@ class PinnedSection extends StatelessWidget {
             child: ListView.separated(
               physics: const NeverScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              itemCount: CourseCards.length,
+              itemCount: courseCards.length,
               itemBuilder: (BuildContext context, int index) {
-                return CourseCards[index];
+                return courseCards[index];
               },
               separatorBuilder: (context, index) {
                 return const SizedBox(
@@ -70,14 +70,14 @@ class PinnedSection extends StatelessWidget {
             children: [
               const Spacer(),
               MoreInfoButton(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const SeeAllPinnedPage()));
-                  },
-                  icon: SvgPicture.asset(
-                      height: 11, width: 6, "lib/assets/svgs/right_caret.svg"),
-                  info: "See all",
-                ),
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SeeAllPinnedPage()));
+                },
+                icon: SvgPicture.asset(
+                    height: 11, width: 6, "lib/assets/svgs/right_caret.svg"),
+                info: "See all",
+              ),
             ],
           )
         ],
