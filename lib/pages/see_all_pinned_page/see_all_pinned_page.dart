@@ -132,7 +132,8 @@ class SeeAllPinnedPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const ScrollSection(rows: 4, courseCards: courseCards)
+                  const ScrollSection(courseCards: courseCards),
+                  const SizedBox(height: 20),
                 ])),
       ),
     );

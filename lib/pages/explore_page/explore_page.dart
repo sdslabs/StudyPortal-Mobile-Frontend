@@ -196,17 +196,17 @@ class _ExplorePageState extends State<ExplorePage>
                 Visibility(
                   maintainState: true,
                   visible: _selectedIndex == 0,
-                  child:
-                      const ScrollSection(rows: 3.5, courseCards: courseCards),
+                  child: const ScrollSection(courseCards: courseCards),
                 ),
                 Visibility(
                   maintainState: true,
                   visible: _selectedIndex == 1,
                   child: ScrollSection(
-                      rows: 3.5, courseCards: [courseCards[1], courseCards[2]]),
+                      courseCards: [courseCards[1], courseCards[2]]),
                 ),
               ],
-            )
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
