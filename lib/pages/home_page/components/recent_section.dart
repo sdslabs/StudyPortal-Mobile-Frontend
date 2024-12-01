@@ -16,11 +16,11 @@ class RecentSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 320,
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       width: size.width,
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: Color(0xFFE3E2E8)),
+        border: Border.all(color: const Color(0xFFE3E2E8)),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(
@@ -28,7 +28,7 @@ class RecentSection extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   right: 8,
                   top: 4,
                   bottom: 4,
@@ -39,37 +39,37 @@ class RecentSection extends StatelessWidget {
                   width: 16,
                 ),
               ),
-              Text(
+              const Text(
                 "Recent",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 13,
           ),
-          Container(
+          SizedBox(
             height: 228,
             child: ListView.separated(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               scrollDirection: Axis.vertical,
               itemCount: 4,
               itemBuilder: (BuildContext context, int index) {
                 return RecentTiles[index];
               },
               separatorBuilder: (context, index) {
-                return SizedBox(
+                return const SizedBox(
                   height: 13,
                 );
               },
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 9,
           ),
           Row(
             children: [
-              Spacer(),
+              const Spacer(),
               MoreInfoButton(
                   onTap: () {
                     print("See all triggered by recent section");

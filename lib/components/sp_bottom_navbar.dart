@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:studyportal/tools/constants.dart';
 
 class SPBottomNavBar extends StatefulWidget {
   final Function(int) onTap;
@@ -19,12 +20,12 @@ class _SPBottomNavBarState extends State<SPBottomNavBar> {
         fontWeight: FontWeight.w500,
         fontSize: 14,
       ),
-      selectedItemColor: const Color(0xFF263054),
+      selectedItemColor: Theme.of(context).colorScheme.secondary,
       unselectedLabelStyle: const TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: 14,
       ),
-      unselectedItemColor: const Color(0xFF646675),
+      unselectedItemColor: const Color(spBottomNavBarUnselectedItemLabel),
       selectedFontSize: 12,
       items: [
         BottomNavigationBarItem(

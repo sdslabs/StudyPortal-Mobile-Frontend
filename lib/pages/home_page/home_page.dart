@@ -4,6 +4,7 @@ import 'package:studyportal/components/file_tile.dart';
 import 'package:studyportal/pages/home_page/components/bookmarked_section.dart';
 import 'package:studyportal/pages/home_page/components/pinned_section.dart';
 import 'package:studyportal/pages/home_page/components/recent_section.dart';
+import 'package:studyportal/pages/home_page/pinned_page.dart';
 import 'package:studyportal/tools/file_type_enum.dart';
 
 import 'package:studyportal/tools/pin_enum.dart';
@@ -14,7 +15,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    const List<Widget> CourseCards = [
+    //dummy list of coursecards
+    const List<Widget> courseCards = [
       CourseCard(
         title: "Architecture",
         subtitle: "Introduction to the electrical world",
@@ -41,7 +43,7 @@ class HomePage extends StatelessWidget {
       ),
     ];
 
-    const List<Widget> RecentTiles = [
+    const List<Widget> recentTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",
@@ -60,7 +62,7 @@ class HomePage extends StatelessWidget {
       )
     ];
 
-    const List<Widget> BookmarkedTiles = [
+    const List<Widget> bookMarkedTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",
@@ -105,17 +107,19 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 PinnedSection(
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const PinnedPage())),
                     size: size,
-                    CourseCards:
-                        CourseCards), //Pinned cards section, goto definition for more info
-                SizedBox(
+                    courseCards:
+                        courseCards), //Pinned cards section, goto definition for more info
+                const SizedBox(
                   height: 24,
                 ),
-                RecentSection(size: size, RecentTiles: RecentTiles),
-                SizedBox(
+                RecentSection(size: size, RecentTiles: recentTiles),
+                const SizedBox(
                   height: 24,
                 ),
-                BookmarkedSection(size: size, bookmarkedTiles: BookmarkedTiles),
+                BookmarkedSection(size: size, bookmarkedTiles: bookMarkedTiles),
                 //This is the recents section, goto definition for more info
               ],
             ),
