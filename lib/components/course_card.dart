@@ -21,6 +21,7 @@ class CourseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 160,
+      height: 160,
       padding: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
           color: themeColor, borderRadius: BorderRadius.circular(12)),
@@ -55,7 +56,6 @@ class CourseCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.only(left: 16),
               width: double.infinity,
-              // color: Colors.red,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

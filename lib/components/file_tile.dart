@@ -10,22 +10,25 @@ class FileTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 336,
+    return SizedBox(
+      // width: 336,
       height: 48,
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           FileIcons(fileType: fileType),
-          SizedBox(
+          const SizedBox(
             width: 16,
           ),
           Text(
             title,
-            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+            style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
           ),
           const Spacer(),
           const MoreVerticalDots(),
+          const SizedBox(
+            width: 8,
+          ),
         ],
       ),
     );
