@@ -3,8 +3,8 @@ import 'package:studyportal/components/file_tabs.dart';
 import 'package:studyportal/components/file_tile.dart';
 import 'package:studyportal/tools/file_type_enum.dart';
 
-class SeeAllRecentPage extends StatelessWidget {
-  const SeeAllRecentPage({super.key});
+class SeeAllDownloadedPage extends StatelessWidget {
+  const SeeAllDownloadedPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class SeeAllRecentPage extends StatelessWidget {
         title: const Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            "Recent",
+            "Downloaded",
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
           ),
         ),
@@ -108,7 +108,7 @@ class SeeAllRecentPage extends StatelessWidget {
               FileTabs(
                 size: size,
                 fileTiles: fileTiles,
-                screen: "Recent",
+                screen: "Downloaded",
               )
             ]),
       ),

@@ -29,8 +29,7 @@ class PinnedSection extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 "lib/assets/svgs/pin_inactive.svg",
-                colorFilter:
-                    const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                colorFilter: ColorFilter.mode(Colors.black, BlendMode.srcIn),
                 height: 16,
                 width: 16,
               ),
@@ -69,13 +68,11 @@ class PinnedSection extends StatelessWidget {
           Row(
             children: [
               const Spacer(),
-              Container(
-                child: MoreInfoButton(
-                  onTap: onTap,
-                  icon: SvgPicture.asset(
-                      height: 11, width: 6, "lib/assets/svgs/right_caret.svg"),
-                  info: "See all",
-                ),
+              MoreInfoButton(
+                onTap: onTap,
+                icon: SvgPicture.asset(
+                    height: 11, width: 6, "lib/assets/svgs/right_caret.svg"),
+                info: "See all",
               ),
             ],
           )

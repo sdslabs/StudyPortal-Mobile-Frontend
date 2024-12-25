@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:studyportal/components/course_card.dart';
 import 'package:studyportal/components/file_tile.dart';
 import 'package:studyportal/pages/home_page/components/bookmarked_section.dart';
+import 'package:studyportal/pages/home_page/components/downloaded_section.dart';
 import 'package:studyportal/pages/home_page/components/pinned_section.dart';
 import 'package:studyportal/pages/home_page/components/recent_section.dart';
-import 'package:studyportal/pages/home_page/pinned_page.dart';
+import 'package:studyportal/pages/see_all_pinned_page/see_all_pinned_page.dart';
 import 'package:studyportal/tools/file_type_enum.dart';
-
 import 'package:studyportal/tools/pin_enum.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,8 +15,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    //dummy list of coursecards
-    const List<Widget> courseCards = [
+    //logic to get list of pinned courses from the database
+    ///course cards coming from the db have to have the following information:
+    ///title, subtitle, themeColor, pin, onTap
+    List<CourseCard> courseCards = const [
       CourseCard(
         title: "Architecture",
         subtitle: "Introduction to the electrical world",
@@ -43,7 +45,7 @@ class HomePage extends StatelessWidget {
       ),
     ];
 
-    const List<Widget> recentTiles = [
+    const List<FileTile> recentTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",
@@ -62,7 +64,7 @@ class HomePage extends StatelessWidget {
       )
     ];
 
-    const List<Widget> bookMarkedTiles = [
+    const List<FileTile> bookmarkedTiles = [
       FileTile(
         fileType: FileType.link,
         title: "ETEs Final Notes - Fluid Dynamics",
@@ -80,52 +82,76 @@ class HomePage extends StatelessWidget {
         title: "This is a file tile",
       )
     ];
+
+    const List<FileTile> downloadedTiles = [
+      FileTile(
+        fileType: FileType.link,
+        title: "ETEs Final Notes - Fluid Dynamics",
+      ),
+      FileTile(
+        fileType: FileType.book,
+        title: "This is a file tile",
+      ),
+      FileTile(
+        fileType: FileType.notes,
+        title: "This is a file tile",
+      ),
+      FileTile(
+        fileType: FileType.pyqs,
+        title: "This is a file tile",
+      )
+    ];
+
     return Scaffold(
-      body: SafeArea(
-          child: Padding(
+        body: SafeArea(
+      child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12.0),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Container(
-            // height: size.height,
-            child: Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(bottom: 23),
-                  // color: Colors.amber,
-                  width: size.width,
-                  height: 50,
-                  child: const Row(
-                    children: [
-                      Text(
-                        "Home",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 24),
-                      ),
-                      Spacer()
-                    ],
-                  ),
+          child: Column(
+            children: [
+              Container(
+                margin: const EdgeInsets.only(bottom: 20, top: 20),
+                width: size.width,
+                height: 50,
+                child: const Row(
+                  children: [
+                    Text(
+                      "Home",
+                      style:
+                          TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
+                    ),
+                    Spacer()
+                  ],
                 ),
-                PinnedSection(
-                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const PinnedPage())),
-                    size: size,
-                    courseCards:
-                        courseCards), //Pinned cards section, goto definition for more info
-                const SizedBox(
-                  height: 24,
-                ),
-                RecentSection(size: size, RecentTiles: recentTiles),
-                const SizedBox(
-                  height: 24,
-                ),
-                BookmarkedSection(size: size, bookmarkedTiles: bookMarkedTiles),
-                //This is the recents section, goto definition for more info
-              ],
-            ),
+              ),
+              PinnedSection(
+                size: size,
+                courseCards: courseCards,
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SeeAllPinnedPage()));
+                },
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              RecentSection(size: size, recentTiles: recentTiles),
+              const SizedBox(
+                height: 24,
+              ),
+              BookmarkedSection(size: size, bookmarkedTiles: bookmarkedTiles),
+              const SizedBox(
+                height: 24,
+              ),
+              DownloadedSection(size: size, downloadedTiles: downloadedTiles),
+              const SizedBox(
+                height: 12,
+              ),
+            ],
           ),
         ),
-      )),
-    );
+      ),
+    ));
   }
 }

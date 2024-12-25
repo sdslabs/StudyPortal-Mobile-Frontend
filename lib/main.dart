@@ -38,22 +38,13 @@ class _StudyPortalState extends State<StudyPortal> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeData(
-      //     textTheme: const TextTheme(titleLarge: TextStyle()),
-      //     fontFamily: "Poppins",
-      //     colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF263054)),
-      //     scaffoldBackgroundColor: const Color(0xFFF0F1F5)),
-
       theme: GlobalThemeData.lightThemeData,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // body: IndexedStack(
-        //   index: _currentIndex,
-        //   children: _pages,
-        // ),
         body: buildNavigator(),
         bottomNavigationBar:
             SPBottomNavBar(currentIndex: _currentIndex, onTap: _onTap),
+        //Edit BottomNavBar to show on page routes through Navigator.push
       ),
     );
   }

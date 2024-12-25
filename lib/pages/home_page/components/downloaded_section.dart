@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:studyportal/components/file_tile.dart';
 import 'package:studyportal/pages/home_page/components/more_info_button.dart';
-import 'package:studyportal/pages/see_all_recent_page/see_all_recent_page.dart';
+import 'package:studyportal/pages/see_all_downloaded_page/see_all_downloaded_page.dart';
 
-class RecentSection extends StatelessWidget {
-  const RecentSection({
+class DownloadedSection extends StatelessWidget {
+  const DownloadedSection({
     super.key,
     required this.size,
-    required this.recentTiles,
+    required this.downloadedTiles,
   });
 
   final Size size;
-  final List<FileTile> recentTiles;
+  final List<FileTile> downloadedTiles;
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +36,13 @@ class RecentSection extends StatelessWidget {
                   bottom: 4,
                 ),
                 child: SvgPicture.asset(
-                  "lib/assets/svgs/hourglass.svg",
+                  "lib/assets/svgs/downloaded_icon.svg",
                   height: 16,
                   width: 16,
                 ),
               ),
               const Text(
-                "Recent",
+                "Downloaded",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
               )
             ],
@@ -57,7 +57,7 @@ class RecentSection extends StatelessWidget {
               scrollDirection: Axis.vertical,
               itemCount: 4,
               itemBuilder: (BuildContext context, int index) {
-                return recentTiles[index];
+                return downloadedTiles[index];
               },
               separatorBuilder: (context, index) {
                 return const SizedBox(
@@ -75,7 +75,7 @@ class RecentSection extends StatelessWidget {
               MoreInfoButton(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const SeeAllRecentPage()));
+                        builder: (context) => const SeeAllDownloadedPage()));
                   },
                   info: "See all",
                   icon: SvgPicture.asset(
