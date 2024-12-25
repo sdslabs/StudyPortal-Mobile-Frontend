@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:studyportal/components/sp_bottom_navbar.dart';
-import 'package:studyportal/pages/explore_page/explore_page.dart';
-import 'package:studyportal/pages/home_page/home_page.dart';
-import 'package:studyportal/pages/profile_page/profile_page.dart';
-import 'package:studyportal/tools/theme_data.dart';
+import 'package:studyportal/features/studymaterial/presentation/widgets/bottom_navbar/sp_bottom_navbar.dart';
+import 'package:studyportal/features/studymaterial/presentation/pages/explore_page/explore_page.dart';
+import 'package:studyportal/features/studymaterial/presentation/pages/home_page/home_page.dart';
+import 'package:studyportal/features/studymaterial/presentation/pages/profile_page/profile_page.dart';
+import 'package:studyportal/core/theme/theme_data.dart';
 
 void main() {
   runApp(const StudyPortal());
