@@ -8,6 +8,7 @@ class SeeAllPinnedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     const List<CourseCard> courseCards = [
       CourseCard(
         title: "Architecture",
@@ -125,8 +126,24 @@ class SeeAllPinnedPage extends StatelessWidget {
                 shrinkWrap: true,
                 scrollDirection: Axis.vertical,
                 children: [
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20, top: 20),
+                    width: size.width,
+                    height: 50,
+                    child: const Row(
+                      children: [
+                        Text(
+                          "Pinned",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600, fontSize: 24),
+                        ),
+                        Spacer()
+                      ],
+                    ),
+                  ),
                   const ScrollSection(
-                      scroll: true, rows: 4, courseCards: courseCards)
+                      scroll: true, rows: 4, courseCards: courseCards),
+                  const SizedBox(height: 20),
                 ])),
       ),
     );

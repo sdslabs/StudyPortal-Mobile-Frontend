@@ -17,8 +17,6 @@ class ScrollSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: rows * 160 - 18,
-        padding: const EdgeInsets.only(top: 12, bottom: 12),
         decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(color: const Color(0xFFE3E2E8), width: 1),

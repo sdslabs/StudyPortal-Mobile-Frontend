@@ -11,7 +11,7 @@ class FileTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 336,
+      // width: 336,
       height: 48,
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -26,6 +26,9 @@ class FileTile extends StatelessWidget {
           ),
           const Spacer(),
           const MoreVerticalDots(),
+          const SizedBox(
+            width: 8,
+          ),
         ],
       ),
     );
