@@ -21,14 +21,15 @@ class _ExplorePageState extends State<ExplorePage>
   void initState() {
     super.initState();
 
+    //write a bloc event to load the initial courseCards meanwhile, assign it to the hardcoded values
+    courseCards = HardCodedConstants.courseCards;
     _tabController = TabController(initialIndex: 0, length: 2, vsync: this);
   }
 
   @override
   void dispose() {
     _tabController.dispose();
-    //write a bloc event to load the initial courseCards meanwhile, assign it to the hardcoded values
-    courseCards = HardCodedConstants.courseCards;
+
     super.dispose();
   }
 
