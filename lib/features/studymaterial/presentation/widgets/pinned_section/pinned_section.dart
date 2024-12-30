@@ -6,12 +6,12 @@ class PinnedSection extends StatelessWidget {
   const PinnedSection({
     super.key,
     required this.size,
-    required this.courseCards,
+    required this.departmentCards,
     required this.onTap,
   });
 
   final Size size;
-  final List<Widget> courseCards;
+  final List<Widget> departmentCards;
   final VoidCallback onTap;
 
   @override
@@ -52,9 +52,9 @@ class PinnedSection extends StatelessWidget {
             child: ListView.separated(
               physics: const NeverScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              itemCount: courseCards.length,
+              itemCount: departmentCards.length,
               itemBuilder: (BuildContext context, int index) {
-                return courseCards[index];
+                return departmentCards[index];
               },
               separatorBuilder: (context, index) {
                 return const SizedBox(

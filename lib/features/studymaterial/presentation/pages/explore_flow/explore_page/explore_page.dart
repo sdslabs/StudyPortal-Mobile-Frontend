@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:studyportal/features/studymaterial/data/pre_integration/hardcoded_stuff.dart';
-import 'package:studyportal/features/studymaterial/presentation/widgets/course_card/course_card.dart';
+import 'package:studyportal/features/studymaterial/presentation/widgets/department_card/department_card.dart';
 import 'package:studyportal/features/studymaterial/presentation/widgets/scroll_section/scroll_section.dart';
 
 class ExplorePage extends StatefulWidget {
@@ -15,14 +15,14 @@ class ExplorePage extends StatefulWidget {
 class _ExplorePageState extends State<ExplorePage>
     with TickerProviderStateMixin {
   late TabController _tabController;
-  List<CourseCard> courseCards = [];
+  List<DepartmentCard> departmentCards = [];
 
   @override
   void initState() {
     super.initState();
 
-    //write a bloc event to load the initial courseCards meanwhile, assign it to the hardcoded values
-    courseCards = HardCodedConstants.courseCards;
+    //write a bloc event to load the initial departmentCards meanwhile, assign it to the hardcoded values
+    departmentCards = HardCodedConstants.departmentCards;
     _tabController = TabController(initialIndex: 0, length: 2, vsync: this);
   }
 
@@ -92,11 +92,13 @@ class _ExplorePageState extends State<ExplorePage>
                   controller: _tabController,
                   children: [
                     ScrollSection(
-                        scroll: true, rows: 3.5, courseCards: courseCards),
+                        scroll: true,
+                        rows: 3.5,
+                        departmentCards: departmentCards),
                     ScrollSection(
                       scroll: true,
                       rows: 3.5,
-                      courseCards: [courseCards[1], courseCards[2]],
+                      departmentCards: [departmentCards[1], departmentCards[2]],
                     ),
                   ],
                 ),

@@ -4,7 +4,7 @@ import 'package:studyportal/features/studymaterial/presentation/widgets/bookmark
 import 'package:studyportal/features/studymaterial/presentation/widgets/downloaded_section/downloaded_section.dart';
 import 'package:studyportal/features/studymaterial/presentation/widgets/pinned_section/pinned_section.dart';
 import 'package:studyportal/features/studymaterial/presentation/widgets/recent_section/recent_section.dart';
-import 'package:studyportal/features/studymaterial/presentation/pages/see_all_pinned_page/see_all_pinned_page.dart';
+import 'package:studyportal/features/studymaterial/presentation/pages/home_flow/see_all_pinned_page/see_all_pinned_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
               ),
               PinnedSection(
                 size: size,
-                courseCards: HardCodedConstants.courseCards,
+                departmentCards: HardCodedConstants.departmentCards,
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const SeeAllPinnedPage()));

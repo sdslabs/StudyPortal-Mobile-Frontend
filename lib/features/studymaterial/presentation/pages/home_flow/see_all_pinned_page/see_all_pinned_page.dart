@@ -29,7 +29,7 @@ class SeeAllPinnedPage extends StatelessWidget {
               ScrollSection(
                   scroll: true,
                   rows: 4,
-                  courseCards: HardCodedConstants.courseCards),
+                  departmentCards: HardCodedConstants.departmentCards),
               SizedBox(height: 20),
             ],
           ),

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_grid/responsive_grid.dart';
-import 'package:studyportal/features/studymaterial/presentation/widgets/course_card/course_card.dart';
+import 'package:studyportal/features/studymaterial/presentation/widgets/department_card/department_card.dart';
 
 class ScrollSection extends StatelessWidget {
   const ScrollSection(
       {super.key,
       required this.rows,
-      required this.courseCards,
+      required this.departmentCards,
       required this.scroll,
       this.title = ""});
 
   final double rows;
-  final List<CourseCard> courseCards;
+  final List<DepartmentCard> departmentCards;
   final bool scroll;
   final String title;
   @override
@@ -30,7 +30,7 @@ class ScrollSection extends StatelessWidget {
           scroll: scroll,
           desiredItemWidth: 160,
           minSpacing: 12,
-          children: courseCards,
+          children: departmentCards,
         ));
   }
 }
