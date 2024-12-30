@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MoreInfoButton extends StatelessWidget {
-  final Function() onTap;
+  final VoidCallback onTap;
   final String info;
   final Widget icon;
   const MoreInfoButton(

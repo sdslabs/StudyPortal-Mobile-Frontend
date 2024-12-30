@@ -9,7 +9,7 @@ class CourseCard extends StatelessWidget {
   final String subtitle;
   final Color themeColor;
   final Pin pin;
-  final void Function()? onTap;
+  final VoidCallback onTap;
 
   static void _defaultOnTap() {}
 

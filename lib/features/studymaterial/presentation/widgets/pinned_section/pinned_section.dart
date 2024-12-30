@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:studyportal/features/studymaterial/presentation/pages/home_page/components/more_info_button.dart';
+import 'package:studyportal/features/studymaterial/presentation/widgets/more_info_button/more_info_button.dart';
 
 class PinnedSection extends StatelessWidget {
   const PinnedSection({
@@ -12,7 +12,7 @@ class PinnedSection extends StatelessWidget {
 
   final Size size;
   final List<Widget> courseCards;
-  final Function() onTap;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,8 @@ class PinnedSection extends StatelessWidget {
             children: [
               SvgPicture.asset(
                 "lib/core/svgs/pin_inactive.svg",
-                colorFilter: ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                colorFilter:
+                    const ColorFilter.mode(Colors.black, BlendMode.srcIn),
                 height: 16,
                 width: 16,
               ),
