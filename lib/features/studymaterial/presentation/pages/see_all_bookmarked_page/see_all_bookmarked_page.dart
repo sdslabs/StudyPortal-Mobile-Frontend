@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:studyportal/features/studymaterial/data/pre_integration/hardcoded_stuff.dart';
 import 'package:studyportal/features/studymaterial/presentation/widgets/file_tabs/file_tabs.dart';
-import 'package:studyportal/features/studymaterial/presentation/widgets/file_tiles/file_tile.dart';
-import 'package:studyportal/features/studymaterial/presentation/widgets/tools/file_type_enum.dart';
 
 class SeeAllBookmarkedPage extends StatelessWidget {
   const SeeAllBookmarkedPage({super.key});
@@ -9,85 +8,6 @@ class SeeAllBookmarkedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-
-    const List<FileTile> fileTiles = [
-      FileTile(
-        fileType: FileType.link,
-        title: "ETEs Final Notes - Fluid Dynamics",
-      ),
-      FileTile(
-        fileType: FileType.book,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.notes,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.pyqs,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.link,
-        title: "ETEs Final Notes - Fluid Dynamics",
-      ),
-      FileTile(
-        fileType: FileType.book,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.notes,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.pyqs,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.pyqs,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.link,
-        title: "ETEs Final Notes - Fluid Dynamics",
-      ),
-      FileTile(
-        fileType: FileType.book,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.notes,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.pyqs,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.pyqs,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.link,
-        title: "ETEs Final Notes - Fluid Dynamics",
-      ),
-      FileTile(
-        fileType: FileType.book,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.notes,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.pyqs,
-        title: "This is a file tile",
-      ),
-      FileTile(
-        fileType: FileType.tut,
-        title: "This is a file tile",
-      ),
-    ];
 
     return Scaffold(
       appBar: AppBar(
@@ -109,7 +29,7 @@ class SeeAllBookmarkedPage extends StatelessWidget {
                 children: [
                   FileTabs(
                     size: size,
-                    fileTiles: fileTiles,
+                    fileTiles: HardCodedConstants.fileTiles,
                     screen: "Bookmarked",
                   )
                 ])),

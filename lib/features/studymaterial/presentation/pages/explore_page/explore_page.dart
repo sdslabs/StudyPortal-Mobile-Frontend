@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:studyportal/features/studymaterial/data/pre_integration/hardcoded_stuff.dart';
 import 'package:studyportal/features/studymaterial/presentation/widgets/course_card/course_card.dart';
-import 'package:studyportal/features/studymaterial/presentation/widgets/tools/pin_enum.dart';
 import 'package:studyportal/features/studymaterial/presentation/widgets/scroll_section/scroll_section.dart';
 
 class ExplorePage extends StatefulWidget {
-  const ExplorePage({super.key});
+  const ExplorePage({
+    super.key,
+  });
 
   @override
   State<ExplorePage> createState() => _ExplorePageState();
@@ -13,50 +15,27 @@ class ExplorePage extends StatefulWidget {
 class _ExplorePageState extends State<ExplorePage>
     with TickerProviderStateMixin {
   late TabController _tabController;
+  List<CourseCard> courseCards = [];
 
   @override
   void initState() {
     super.initState();
+
+    //write a bloc event to load the initial courseCards meanwhile, assign it to the hardcoded values
+    courseCards = HardCodedConstants.courseCards;
     _tabController = TabController(initialIndex: 0, length: 2, vsync: this);
   }
 
   @override
   void dispose() {
     _tabController.dispose();
+
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-
-    const List<CourseCard> courseCards = [
-      CourseCard(
-        title: "Card1",
-        subtitle: "This is the subtitle\nabab\nababa",
-        themeColor: Color(0xFF0D891B),
-        pin: Pin.none,
-      ),
-      CourseCard(
-        title: "Card1",
-        subtitle: "This is the",
-        themeColor: Color(0xFFCF4141),
-        pin: Pin.none,
-      ),
-      CourseCard(
-        title: "Card1",
-        subtitle: "This is the subtitle",
-        themeColor: Colors.deepPurple,
-        pin: Pin.none,
-      ),
-      CourseCard(
-        title: "Architecture",
-        subtitle: "Introduction to the electrical world",
-        themeColor: Color(0xFF20284C),
-        pin: Pin.none,
-      ),
-    ];
-
     return Scaffold(
       body: SafeArea(
         child: Padding(

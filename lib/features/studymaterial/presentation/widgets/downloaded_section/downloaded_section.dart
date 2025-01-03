@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:studyportal/features/studymaterial/presentation/widgets/file_tiles/file_tile.dart';
-import 'package:studyportal/features/studymaterial/presentation/pages/home_page/components/more_info_button.dart';
+import 'package:studyportal/features/studymaterial/presentation/widgets/more_info_button/more_info_button.dart';
 import 'package:studyportal/features/studymaterial/presentation/pages/see_all_downloaded_page/see_all_downloaded_page.dart';
 
 class DownloadedSection extends StatelessWidget {
